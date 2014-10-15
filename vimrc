@@ -37,6 +37,8 @@ Plugin 'Raimondi/delimitMate'
 "Latex
 "Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 Bundle 'vim-scripts/TeX-9'
+" ROS
+Bundle 'taketwo/vim-ros'
 
 filetype plugin indent on
 
@@ -76,8 +78,6 @@ set gdefault
 :set formatoptions+=t
 
 " Autocompletion and Supertab
-"Complete options (disable preview scratch window)
-"set completeopt=menu,menuone,longest
 
 " Limit popup menu height
 set pumheight=15
@@ -171,6 +171,9 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 "let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+"
+"Complete options (disable preview scratch window)
+set completeopt=menu,menuone,longest
 
 "Syntax checking
 let g:ycm_register_as_syntastic_checker = 1 "default 1
@@ -230,6 +233,9 @@ au FileType c,cpp,python let b:delimitMate_matchpairs = "(:),[:],{:}"
 " Rely on snippets for latex
 au FileType tex,latex let b:delimitMate_matchpairs = ""
 
+" Use astyle for autoindenting c,cpp
+set equalprg=astyle
+
 " split screen movements
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -237,5 +243,5 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " switch to alternate buffer
-nmap ; <c-6>
+nmap ; <c-^>
 
