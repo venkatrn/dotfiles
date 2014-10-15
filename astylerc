@@ -1,0 +1,43 @@
+# Google style formatting/indenting uses attached brackets and indented class
+# access modifiers. See the indent-modifiers option for an example of the
+# indented modifiers format. This style frequently is used with an indent of
+# 2 spaces.
+style=google
+
+# Indent using 2 spaces per indent.
+indent=spaces=2
+
+# Attach brackets to a namespace statement. This is done regardless of the
+# bracket style being used.
+attach-namespaces
+
+# Attach brackets to a class statement. This is done regardless of the
+# bracket style being used.
+attach-classes
+
+# Indent 'class' and 'struct' access modifiers, 'public:', 'protected:'
+# and 'private:', one half indent.
+indent-modifiers
+
+# Indent C++ comments beginning in column one.
+indent-col1-comments
+
+# Set the minimal indent that is added when a header is built of multiple lines.
+min-conditional-indent=0
+
+# Set the  maximum of 80 spaces to indent a continuation line.
+max-instatement-indent=80
+
+# Pad empty lines around header blocks.
+break-blocks
+
+pad-oper
+pad-header
+align-pointer=name
+align-reference=name
+add-brackets
+close-templates
+max-code-length=79
+break-after-logical
+
+lineend=linux
