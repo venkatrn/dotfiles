@@ -22,12 +22,13 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-surround'
 "Autocompletion
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 "Snippets
-Plugin 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+" Plugin 'SirVer/ultisnips'
+" " Snippets are separated from the engine. Add this if you want them:
+" Plugin 'honza/vim-snippets'
 " Auto-resize splits
-Bundle 'roman/golden-ratio'
+" Bundle 'roman/golden-ratio'
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 " Statusline
@@ -54,7 +55,6 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set background=light
 set autoindent
 "set smartindent
 "set cindent
@@ -74,8 +74,12 @@ set pastetoggle=<F2>
 set gdefault
 
 " Line wrap (hard)
-:set tw=119
+:set tw=79
+au FileType tex,txt,doc set tw=78
 :set formatoptions+=t
+
+" Leader mappings
+:let maplocalleader = ","
 
 " Autocompletion and Supertab
 
@@ -96,11 +100,12 @@ set pumheight=15
 "beautification
 colorscheme molokai
 set bg=light
+let g:molokai_original = 1
+let g:rehash256 = 1
 hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 " Fix the delete key problem in insert mode
 set backspace+=indent,eol,start
-
 
 if has("autocmd")
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -167,10 +172,18 @@ map <Leader>k <Plug>(easymotion-k)
 
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf_ros.py"
+" let g:ycm_global_ycm_extra_conf = "/usr0/home/venkatrn/hydro_workspace/src/perception/sbpl_perception/.ycm_extra_conf.py"
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 "let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+" let g:ycm_semantic_triggers = {
+" \   'roslaunch' : ['="', '$(', '/'],
+" \   'rosmsg,rossrv,rosaction' : ['re!^'],
+" \ }
+" let g:ycm_semantic_triggers = {'cpp': ['->', '.', '::', 're![a-zA-Z0-9_]']}
+
+
 "
 "Complete options (disable preview scratch window)
 set completeopt=menu,menuone,longest
@@ -196,7 +209,7 @@ let g:ycm_path_to_python_interpreter = '' "default ''
 let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
 let g:ycm_server_log_level = 'info' "default info
 
-let g:ycm_confirm_extra_conf = 1
+let g:ycm_confirm_extra_conf = 0 "don't show confirmation messages
 
 let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
 let g:ycm_filetype_whitelist = { '*': 1 }
@@ -206,9 +219,9 @@ nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 
 
 " ycm-ultisnips magic
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 "multiple cursors
 highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
@@ -219,7 +232,7 @@ let g:bufferline_rotate = 1
 let g:bufferline_fixed_index =  0 "always second (default)
 
 "latex
-let g:tex_flavor = 'latex'
+" let g:tex_flavor = 'latex'
 let g:tex_nine_config = {
       \'compiler': 'pdflatex',
       \'viewer': {'app':'xdg-open', 'target':'pdf'},
@@ -234,7 +247,11 @@ au FileType c,cpp,python let b:delimitMate_matchpairs = "(:),[:],{:}"
 au FileType tex,latex let b:delimitMate_matchpairs = ""
 
 " Use astyle for autoindenting c,cpp
-set equalprg=astyle
+au FileType c,cpp,python set equalprg=astyle
+" set equalprg=astyle
+
+" Git
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " split screen movements
 nnoremap <C-h> <C-w>h

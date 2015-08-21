@@ -38,7 +38,6 @@ qtcreator-*
 # Catkin custom files
 CATKIN_IGNORE
 
-
 ### C++ Stuff ############################
 
 # Compiled Object files
@@ -78,7 +77,6 @@ CATKIN_IGNORE
 
 CMakeCache.txt
 CMakeFiles
-Makefile
 cmake_install.cmake
 install_manifest.txt
 

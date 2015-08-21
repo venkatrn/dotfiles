@@ -11,7 +11,8 @@ if [ -z "$pid" ]; then
         sleep 1 # Let it fork and stuff
 fi
 
-ssh-add $HOME/.ssh/id_dsa
+eval `ssh-agent -s`
+ssh-add $HOME/.ssh/id_rsa
 
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc

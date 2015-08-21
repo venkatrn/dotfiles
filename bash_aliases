@@ -10,6 +10,14 @@ alias fgrep='fgrep --color=auto'
 
 alias diff='colordiff'
 
+# Colorize make output
+# alias make="make VERBOSE=1 2>&1 | sed -e 's%^.*: error: .*$%\x1b[37;41m&\x1b[m%' -e 's%^.*: warning: .*$%\x1b[30;43m&\x1b[m%'"
+# alias make="make VERBOSE=1 2>&1 | sed -e 's%^.*: error: .*$%\x1b[37;41m&\x1b[m%'"
+# alias make="make 2>&1 | sed -e 's%^.*: error: .*$%\x1b[37;41m&\x1b[m%'"
+
+## Open pdfs
+alias o='xdg-open'
+
 alias matlab='matlab -nodesktop -nosplash'
 alias matlab_gui='matlab'
 
@@ -22,6 +30,7 @@ alias rviz='rosrun rviz rviz'
 
 ip=`ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`
 sbpl_ip="192.168.1.100"
+# sbpl_ip="192.168.1.111"
 ## PR2-aliases (based on whether I am connected to the SCS or SBPL network)
 if [ "$ip" == "$sbpl_ip" ]
 then
