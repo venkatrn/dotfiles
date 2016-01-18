@@ -71,6 +71,9 @@ CATKIN_IGNORE
 ### Latex Stuff ##########################
 *.aux
 *.log
+*.bbl
+*.blg
+*.brf
 
 
 ### CMake Stuff ##########################
