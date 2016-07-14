@@ -1,13 +1,13 @@
-"execute pathogen#infect()
 
 """"""""""""""""""""""""Begin Vundle"""""""""""""""""
 " Required Vundle setup
+set nocompatible
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Vundle - package manager
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 " NERDTree - file browser
 Plugin 'scrooloose/nerdtree.git'
 " ctrlp - fuzzy file finder
@@ -41,11 +41,10 @@ Bundle 'vim-scripts/TeX-9'
 " ROS
 Bundle 'taketwo/vim-ros'
 
+call vundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""End Vundle"""""""""""""""""
-
-set nocompatible
 set visualbell t_vb=
 syntax enable
 filetype plugin on

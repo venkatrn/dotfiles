@@ -1,5 +1,4 @@
 export PATH=~/bin:$PATH
-export PATH=/usr/local/programs/MATLAB/R2013a/bin:$PATH
 export PATH=~/projects/third_party/google_appengine:$PATH
 export TERM="xterm-256color"
 
@@ -9,22 +8,22 @@ export TERM="xterm-256color"
 # YCM-autocompleter compile flags
 export PYTHONPATH=~/projects/third_party/ycm_extra_conf.jsondb:$PYTHONPATH
 
-
 # ROS-specific
 # source ~/groovy_workspace/setup.bash
 # export ROS_PACKAGE_PATH=~/groovy_workspace:$ROS_PACKAGE_PATH
 # export ROS_WORKSPACE=~/groovy_workspace
 
-source /opt/ros/hydro/setup.bash
-export ROS_PACKAGE_PATH=~/hydro_workspace:$ROS_PACKAGE_PATH
+source /opt/ros/indigo/setup.bash
+source ~/indigo_workspace/devel/setup.bash
+#export ROS_PACKAGE_PATH=~/hydro_workspace:$ROS_PACKAGE_PATH
 
 export ROBOT=sim
 #export ROS_IP=128.2.178.26
-export ROS_IP=`ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`
+export ROS_IP=`ifconfig em1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`
 export ROS_PARALLEL_JOBS=-j8
 
 # Enable ccache
-export PATH=/usr/lib/ccache:$PATH
+# export PATH=/usr/lib/ccache:$PATH
 
 source ~/.bash_aliases
 
@@ -35,7 +34,7 @@ source ~/.bash_aliases
 # The next line updates PATH for the Google Cloud SDK.
 source '/usr0/home/venkatrn/projects/third_party/google-cloud-sdk/path.bash.inc'
 
-# The next line enables bash completion for gcloud.
+# The next line enables shell command completion for gcloud.
 source '/usr0/home/venkatrn/projects/third_party/google-cloud-sdk/completion.bash.inc'
 
 # added by Anaconda 2.3.0 installer
