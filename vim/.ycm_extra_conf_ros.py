@@ -116,7 +116,7 @@ def GetCompilationDatabaseFolder(filename):
            pkg_name)
 
     # return dir
-    return '/usr0/home/venkatrn/hydro_workspace/build'
+    return '/usr0/home/venkatrn/indigo_workspace/build'
 
 
 def GetDatabase(compilation_database_folder):

@@ -40,7 +40,7 @@ else
 fi
 
 ## Temporary aliases
-alias perch='cd ~/hydro_workspace/src/perception/sbpl_perception'
+alias perch='roscd sbpl_perception'
 
 ## Search history with grep
 function history_sync {
@@ -85,3 +85,6 @@ NO_COLOR="\[\033[0m\]"
 
 # PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 PS1="$NO_COLOR\u@\h$GREEN\$(parse_git_branch)$NO_COLOR:\w$NO_COLOR\$ "
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'

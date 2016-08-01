@@ -11,10 +11,10 @@ export PYTHONPATH=~/projects/third_party/ycm_extra_conf.jsondb:$PYTHONPATH
 # ROS-specific
 # source ~/groovy_workspace/setup.bash
 # export ROS_PACKAGE_PATH=~/groovy_workspace:$ROS_PACKAGE_PATH
-# export ROS_WORKSPACE=~/groovy_workspace
 
 source /opt/ros/indigo/setup.bash
 source ~/indigo_workspace/devel/setup.bash
+export ROS_WORKSPACE=~/indigo_workspace
 #export ROS_PACKAGE_PATH=~/hydro_workspace:$ROS_PACKAGE_PATH
 
 export ROBOT=sim
