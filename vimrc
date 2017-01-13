@@ -37,7 +37,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'Raimondi/delimitMate'
 "Latex
 "Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-Bundle 'vim-scripts/TeX-9'
+" Bundle 'vim-scripts/TeX-9'
 " ROS
 Bundle 'taketwo/vim-ros'
 
@@ -188,6 +188,7 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 set completeopt=menu,menuone,longest
 
 "Syntax checking
+let g:loaded_youcompleteme = 1
 let g:ycm_register_as_syntastic_checker = 1 "default 1
 let g:Show_diagnostics_ui = 1 "default 1
 

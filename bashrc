@@ -1,5 +1,7 @@
 export PATH=~/bin:$PATH
 export PATH=~/projects/third_party/google_appengine:$PATH
+export PATH=/usr/local/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 export TERM="xterm-256color"
 
 # Set python path (for some reason, this is not st by default)
@@ -13,8 +15,10 @@ export PYTHONPATH=~/projects/third_party/ycm_extra_conf.jsondb:$PYTHONPATH
 # export ROS_PACKAGE_PATH=~/groovy_workspace:$ROS_PACKAGE_PATH
 
 source /opt/ros/indigo/setup.bash
-source ~/indigo_workspace/devel/setup.bash
 export ROS_WORKSPACE=~/indigo_workspace
+source ~/indigo_workspace/devel/setup.bash
+# export ROS_WORKSPACE=~/fbp_workspace
+# source ~/fbp_workspace/devel/setup.bash
 #export ROS_PACKAGE_PATH=~/hydro_workspace:$ROS_PACKAGE_PATH
 
 export ROBOT=sim

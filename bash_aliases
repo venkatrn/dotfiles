@@ -24,7 +24,7 @@ alias rviz='rosrun rviz rviz'
 
 ip=`ifconfig em1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`
 # sbpl_ip="192.168.1.101"
-sbpl_ip="192.168.1.106"
+sbpl_ip="192.168.1.111"
 ## PR2-aliases (based on whether I am connected to the SCS or SBPL network)
 if [ "$ip" == "$sbpl_ip" ]
 then
@@ -42,6 +42,11 @@ fi
 ## Temporary aliases
 alias perch='roscd sbpl_perception'
 
+# AWS
+function aws {
+ssh -X -i ~/research/aws/aws_cmu_desktop.pem ubuntu@$1
+}
+
 ## Search history with grep
 function history_sync {
 history -a
@@ -55,6 +60,12 @@ history -r
 builtin history
 }
 alias hgrep="hist|grep"
+
+function rmake {
+  pushd ~/indigo_workspace
+  catkin_make -DCMAKE_BUILD_TYPE=Release
+  popd
+}
 
 # Colorize make output
 make()
