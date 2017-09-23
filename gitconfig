@@ -1,0 +1,28 @@
+[user]
+  name = 
+  email = 
+[core]
+  editor = vim
+	excludesfile = ~/.gitignore_global
+[diff]
+  tool = meld
+	external = ~/dotfiles/diff.py
+[difftool]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+  tool = meld
+[mergetool "meld"]
+    # Choose one of these 2 lines (not both).
+  cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  lg = log --oneline --graph --decorate
+[push]
+  default = matching
+[https]
+	postBuffer = 157286400
